@@ -76,31 +76,26 @@ console.log(max);
 let word=prompt("What is your favorite word?");
 console.log(word.length, word.toLowerCase(), word.toUpperCase());
 
-//THIS EXERCISE ISNT COMPLETED YET. WILL REVIEW IT ASAP
-//Vowel count: a, e, i, o, u
+//Vowel count
 //Improve the previous program so that it also shows the number of vowels inside the word.
-let favword=prompt("What is your favorite word?");
+let word=prompt("What is your favorite word?");
 // console.log(word.length, word.toLowerCase(), word.toUpperCase());
-let aVowelCounter=0;
-let eVowelCounter=0;
-let iVowelCounter=0;
-let oVowelCounter=0;
-let uVowelCounter=0;
-for(let i = 0; i<favword.length; i++){
-    if(favword.indexOf("a") === 1){
-      aVowelCounter++;
-    }
-    if(favword.indexOf("e") === 1){
-      eVowelCounter++;
-    }
-    if(favword.indexOf("i") === 1){
-      iVowelCounter++;
-    }
-    if(favword.indexOf("o") === 1){
-      oVowelCounter++;
-    }
-    if(favword.indexOf("u") === 1){
-      uVowelCounter++;
+let vowels = ["a", "e", "i", "o", "u"];
+
+function countVowels(string){
+  let count = 0;
+  
+  //loop through string to test if each character is a vowel
+  for (let character of string.toLowerCase()) {
+    if (vowels.includes(character)) {
+      //returns true if a string contains a specified string
+      count++;
     }
   }
-console.log(favword.length, favword.toLowerCase(), favword.toUpperCase(), `a: ${aVowelCounter}, e: ${eVowelCounter}, i: ${iVowelCounter}, o: ${oVowelCounter}, u: ${uVowelCounter}`);
+  
+  return count;
+}
+
+const result = countVowels(word);
+
+console.log(word.length, word.toLowerCase(), word.toUpperCase(), result);
