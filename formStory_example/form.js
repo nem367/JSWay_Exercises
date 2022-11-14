@@ -1,19 +1,25 @@
-document.getElementById("submitButton").addEventListener('click', story);
+// document.getElementById("submitButton").addEventListener('submit', story);
 
-function story() {  
-    document.getElementById("form").style.display="none";
-    let animalElement = document.getElementById("animal").value;
-    let colorElement = document.getElementById("color").value;
-    let locationElement = document.getElementById("location").value;
-    console.log(`The ${animalElement} is ${colorElement} and likes to sleep in ${locationElement}`);
+formElement=document.getElementById("form");
+
+// function story() {  
+formElement.addEventListener("submit", e => {
+
+    const animal = e.target.elements.animal.value;
+    const color = e.target.elements.color.value;
+    const location = e.target.elements.location.value;
+
+    console.log(`The ${animal} is ${color} and likes to sleep in ${location}`);
 
     const storyElement = document.createElement("p");
     storyElement.id = "storyText";
-    storyElement.textContent = `The ${animalElement} is ${colorElement} and likes to sleep in ${locationElement}`;
+    storyElement.textContent = `The ${animal} is ${color} and likes to sleep in ${location}`;
     document.getElementById("content").appendChild(storyElement);
 
     setTimeout(() => {
-        document.getElementById("form").style.display="block";
-        document.getElementById("storyText").style.display="none";
+        formElement.reset(); 
+        document.getElementById("storyText").style.display="none"; 
     }, 5000)
-}  
+
+    e.preventDefault();
+});

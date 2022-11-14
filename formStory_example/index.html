@@ -7,12 +7,18 @@
     <title>Document</title>
 </head>
 <body id="content">
-    <div id ="form">
-        <h4>Animal:</h4> <input id="animal" type="text">
-        <h4>Color:</h4> <input id="color" type="text">
-        <h4>Location:</h4> <input id="location" type="input">
-        <button id="submitButton"> Submit </button>
-    </div>
+    <form id ="form">
+        <label for="animal">Animal</label>:
+        <input type="text" name="animal" id="animal">
+
+        <label for="color">Color</label>:
+        <input type="text" name="color" id="color">
+
+        <label for="location">Location</label>:
+        <input type="text" name="location" id="location">
+
+        <input id="submitButton" type="submit" value="Submit"> 
+    </form>
     <script src="form.js"></script>
 </body>
 </html>
