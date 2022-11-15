@@ -26,9 +26,11 @@ function deadChecker(){
     if(status==="Dead"){
       document.body.style.backgroundColor = "green";
       counter++;
+      document.getElementById('liveUpdate').innerText = "+1";
      }else{
       document.body.style.backgroundColor = "red";
       counter--;
+      document.getElementById('liveUpdate').innerText = "-1";
      }
 }
 
@@ -39,10 +41,12 @@ function aliveChecker(){
     document.body.style.backgroundColor = "green";
     // counter+=1;
     counter++;
+    document.getElementById('liveUpdate').innerText = "+1";
   }else{
     document.body.style.backgroundColor = "red";
     // counter-=1;
     counter--;
+    document.getElementById('liveUpdate').innerText = "-1";
   }
 }
 
@@ -52,9 +56,12 @@ function unknownChecker(){
     if(status==="Unknown"){
     document.body.style.backgroundColor = "green";
     counter++;
+    document.getElementById('liveUpdate').innerText = "+1";
+
   }else{
     document.body.style.backgroundColor = "red";
     counter--;
+    document.getElementById('liveUpdate').innerText = "-1";
   }
 }
 
@@ -63,3 +70,8 @@ console.log(counter);
 //need to fix david's bug of not being able to submit another response
 
 document.getElementById('score').innerText = `Score: ${counter}`;
+
+if (counter === 10) {
+  counter = 'YOU WIN!';
+  document.getElementById('score').innerText = counter;
+}
