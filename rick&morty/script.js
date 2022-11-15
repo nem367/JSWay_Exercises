@@ -32,6 +32,9 @@ function deadChecker(){
       counter--;
       document.getElementById('liveUpdate').innerText = "-1";
      }
+     setTimeout(() => {
+      display();
+    }, "2000")
 }
 
 document.getElementById("alive").addEventListener("click", aliveChecker);
@@ -48,6 +51,9 @@ function aliveChecker(){
     counter--;
     document.getElementById('liveUpdate').innerText = "-1";
   }
+  setTimeout(() => {
+    display();
+  }, "2000")
 }
 
 document.getElementById("unknown").addEventListener("click", unknownChecker);
@@ -63,6 +69,9 @@ function unknownChecker(){
     counter--;
     document.getElementById('liveUpdate').innerText = "-1";
   }
+  setTimeout(() => {
+    display();
+  }, "2000")
 }
 
 console.log(counter);
